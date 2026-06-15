@@ -9,7 +9,7 @@ import svcWigImg from "@/assets/service-wig.jpg";
 import flowerImg from "@/assets/flower.png";
 
 const LOGO_URL = "https://mjdrordjjxnysfupzgzv.supabase.co/storage/v1/object/public/client-logos/nbqiDYMPqU8LGg5e3CRdPp/1781041519432.png";
-const BOOKING_URL = "https://ingrid-beauty-hair.sobeauty.business";
+const BOOKING_URL = "https://book.sobeauty.business/ingrid-beauty-hair";
 
 type Lang = "fr" | "en";
 

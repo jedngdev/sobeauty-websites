@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SiteFooter } from "./index";
 
 const LOGO_URL = "https://mjdrordjjxnysfupzgzv.supabase.co/storage/v1/object/public/client-logos/nbqiDYMPqU8LGg5e3CRdPp/1781041519432.png";
-const BOOKING_URL = "https://ingrid-beauty-hair.sobeauty.business";
+const BOOKING_URL = "https://book.sobeauty.business/ingrid-beauty-hair";
 
 type Item = { name: string; duration: string; price: string; notes?: string };
 type Group = { title: string; items: Item[] };
