@@ -1,15 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Mail, MapPin, Star, ArrowRight, Heart, Instagram, Phone } from "lucide-react";
+import eclatLogoImg from "@/assets/eclat-logo.png";
+import heroImg from "@/assets/hero-eclat.jpg";
+import audreyImg from "@/assets/audrey-portrait.jpg";
 import braidsImg from "@/assets/service-braids.jpg";
-import locsImg from "@/assets/service-locs.jpg";
-import wigImg from "@/assets/service-wig.jpg";
+import knotlessImg from "@/assets/knotless.jpg";
+import nailsImg from "@/assets/manicure-pedicure.jpg";
 import flowerImg from "@/assets/flower.png";
-import aboutImg from "@/assets/diane-portrait.png"; // TODO: replace with Audrey's photo once uploaded to Supabase
 
-const LOGO_URL = ""; // TODO: upload éclat coiffure logo PNG to Supabase and paste CDN URL here
-const ABOUT_URL = ""; // TODO: upload about/action photo to Supabase and paste URL here
-const NAILS_IMG_URL = ""; // TODO: upload manicure/nails photo to Supabase and paste URL here
 const BOOKING_URL = "https://book.sobeauty.business/eclatcoiffure";
 const INSTAGRAM_URL = "https://www.instagram.com/Majoliecamer";
 const TIKTOK_URL = "https://www.tiktok.com/@Majoliecameroun";
@@ -195,8 +194,8 @@ function Index() {
 
   const serviceImages = [
     braidsImg,
-    locsImg,
-    NAILS_IMG_URL || wigImg, // nails photo once uploaded, wig as placeholder
+    knotlessImg,
+    nailsImg,
   ] as const;
 
   return (
@@ -209,22 +208,12 @@ function Index() {
       >
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2">
-            {LOGO_URL ? (
-              <img
-                src={LOGO_URL}
-                alt="Éclat Coiffure"
-                className={`transition-all duration-500 ${scrolled ? "h-8" : "h-10"} w-auto`}
-              />
-            ) : (
-              <span
-                className={`font-display font-light transition-all duration-500 ${
-                  scrolled ? "text-xl text-foreground" : "text-2xl"
-                }`}
-                style={{ color: scrolled ? undefined : "var(--cream)" }}
-              >
-                éclat coiffure
-              </span>
-            )}
+            <img
+              src={eclatLogoImg}
+              alt="Éclat Coiffure"
+              className={`transition-all duration-500 ${scrolled ? "h-10" : "h-14"} w-auto`}
+              style={{ filter: scrolled ? "none" : "drop-shadow(0 0 8px oklch(0.71 0.12 75 / 0.4))" }}
+            />
           </a>
           <nav className="hidden md:flex items-center gap-10 text-sm font-medium">
             <a href="#services" className={`transition-colors hover:text-accent ${scrolled ? "" : "text-cream"}`}>{t.nav.services}</a>
@@ -310,7 +299,7 @@ function Index() {
             <div className="absolute -inset-6 rounded-[2rem] bg-copper opacity-20 blur-3xl animate-shimmer" />
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-elegant border border-cream/10">
               <img
-                src={ABOUT_URL || braidsImg}
+                src={heroImg}
                 alt="Coiffure professionnelle par Audrey Tinguem"
                 className="h-full w-full object-cover"
               />
@@ -381,7 +370,7 @@ function Index() {
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant">
               <img
-                src={ABOUT_URL || aboutImg}
+                src={audreyImg}
                 alt="Audrey Tinguem — Éclat Coiffure"
                 loading="lazy"
                 className="h-full w-full object-cover"
@@ -499,11 +488,7 @@ function Index() {
       <footer className="py-16 px-6" style={{ background: "var(--espresso)" }}>
         <div className="mx-auto max-w-7xl grid md:grid-cols-3 gap-10 items-start">
           <div>
-            {LOGO_URL ? (
-              <img src={LOGO_URL} alt="Éclat Coiffure" className="h-12 w-auto mb-4" />
-            ) : (
-              <p className="font-display text-2xl font-light mb-4 italic" style={{ color: "var(--cream)" }}>éclat coiffure</p>
-            )}
+            <img src={eclatLogoImg} alt="Éclat Coiffure" className="h-16 w-auto mb-4" style={{ filter: "brightness(0) invert(1)" }} />
             <p className="text-sm max-w-xs" style={{ color: "oklch(0.96 0.022 75 / 0.6)" }}>
               {t.footer.tagline}
             </p>
