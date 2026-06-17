@@ -8,8 +8,8 @@ import wigCustomImg from "@/assets/wig-custom.jpg";
 import aboutDelieImg from "@/assets/about-delie.jpg";
 import flowerImg from "@/assets/flower.png";
 const BOOKING_URL = "https://book.sobeauty.business/deliebeauty";
-const INSTAGRAM_URL = "https://www.instagram.com/delie_beauty";
-const TIKTOK_URL = "https://www.tiktok.com/@delie_beauty";
+const INSTAGRAM_URL = "https://www.instagram.com/deliebeauty";
+const TIKTOK_URL = "https://www.tiktok.com/@deliebeauty";
 
 type Lang = "fr" | "en";
 
@@ -466,10 +466,10 @@ function Index() {
           <div className="space-y-3 text-sm" style={{ color: "oklch(0.96 0.022 75 / 0.8)" }}>
             <h4 className="font-display text-xl mb-3" style={{ color: "var(--cream)" }}>{t.footer.follow}</h4>
             <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-copper transition-colors">
-              <Instagram className="h-4 w-4" /><span>@delie_beauty</span>
+              <Instagram className="h-4 w-4" /><span>@deliebeauty</span>
             </a>
             <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-copper transition-colors">
-              <span className="h-4 w-4 text-xs font-bold flex items-center justify-center">TT</span><span>@delie_beauty</span>
+              <span className="h-4 w-4 text-xs font-bold flex items-center justify-center">TT</span><span>@deliebeauty</span>
             </a>
           </div>
         </div>
