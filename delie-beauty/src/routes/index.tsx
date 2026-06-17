@@ -1,14 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Mail, MapPin, Star, ArrowRight, Heart, Instagram, Phone } from "lucide-react";
-import braidsImg from "@/assets/service-braids.jpg";
-import locsImg from "@/assets/service-locs.jpg";
-import wigImg from "@/assets/service-wig.jpg";
+import delieLogoImg from "@/assets/delie-logo.png";
+import posePerruqueImg from "@/assets/pose-perruque.jpg";
+import fulaniBraidsImg from "@/assets/fulani-braids.jpg";
+import wigCustomImg from "@/assets/wig-custom.jpg";
+import aboutDelieImg from "@/assets/about-delie.jpg";
 import flowerImg from "@/assets/flower.png";
-import aboutImg from "@/assets/diane-portrait.png"; // TODO: replace with Ketsia's photo once uploaded to Supabase
-
-const LOGO_URL = "https://mjdrordjjxnysfupzgzv.supabase.co/storage/v1/object/public/client-logos/ZyUrbmb9U1AFSStpmPd6dl/1780688954141.png";
-const ABOUT_URL = ""; // TODO: upload Ketsia's portrait or action photo to Supabase and paste URL here
 const BOOKING_URL = "https://book.sobeauty.business/deliebeauty";
 const INSTAGRAM_URL = "https://www.instagram.com/delie_beauty";
 const TIKTOK_URL = "https://www.tiktok.com/@delie_beauty";
@@ -28,7 +26,7 @@ const translations = {
       happy: "Clientes ravies",
       location: "Roubaix, 59100",
     },
-    marquee: ["Pose Perruque", "Funali Braids", "Jayda Wayda", "Customisation", "Pose Nigérienne", "Coiffure Afro"],
+    marquee: ["Pose Perruque", "Fulani Braids", "Jayda Wayda", "Customisation", "Pose Nigérienne", "Coiffure Afro"],
     services: {
       tag: "— Services",
       title1: "Des prestations",
@@ -37,7 +35,7 @@ const translations = {
       seeAll: "Voir tous les services & tarifs",
       items: [
         { title: "Pose Perruque", desc: "Pose sans styliste, avec lissage ou avec boucles. Résultat naturel, soigné et adapté à votre style.", price: "à partir de 25€" },
-        { title: "Funali Braids", desc: "Funali braids larges, medium ou small. Nattes tendance, légères et polyvalentes — durée 4h à 6h.", price: "à partir de 50€" },
+        { title: "Fulani Braids", desc: "Fulani braids larges, medium ou small. Nattes tendance, légères et polyvalentes — durée 4h à 6h.", price: "à partir de 50€" },
         { title: "Customisation Perruque", desc: "Customisation, rattrapage, lavage. Redonnez vie à votre perruque avec une finition parfaite.", price: "à partir de 20€" },
       ],
     },
@@ -59,7 +57,7 @@ const translations = {
       seeAll: "Voir mes réalisations sur Instagram",
       items: [
         { name: "Inès M.", text: "La pose de perruque était impeccable. Un résultat naturel et soigné, Ketsia est vraiment douée et à l'écoute.", service: "Pose Perruque" },
-        { name: "Raïssa K.", text: "Mes funali braids sont magnifiques. Précise, patiente et bienveillante — une vraie expérience premium.", service: "Funali Braids" },
+        { name: "Raïssa K.", text: "Mes funali braids sont magnifiques. Précise, patiente et bienveillante — une vraie expérience premium.", service: "Fulani Braids" },
         { name: "Nadège B.", text: "La customisation de ma perruque est parfaite. Je ne pouvais pas espérer un meilleur résultat.", service: "Customisation" },
       ],
     },
@@ -71,7 +69,7 @@ const translations = {
       bookNow: "Réserver maintenant",
     },
     footer: {
-      tagline: "Pose perruque • Funali braids • Jayda wayda • Customisation à Roubaix. Un mélange de beauté et élégance.",
+      tagline: "Pose perruque • Fulani braids • Jayda wayda • Customisation à Roubaix. Un mélange de beauté et élégance.",
       contact: "Contact",
       follow: "Suivez-moi",
       rights: "Tous droits réservés.",
@@ -91,7 +89,7 @@ const translations = {
       happy: "Happy clients",
       location: "Roubaix, 59100",
     },
-    marquee: ["Wig Install", "Funali Braids", "Jayda Wayda", "Customisation", "Nigerian Style", "Afro Hair"],
+    marquee: ["Wig Install", "Fulani Braids", "Jayda Wayda", "Customisation", "Nigerian Style", "Afro Hair"],
     services: {
       tag: "— Services",
       title1: "Tailored",
@@ -100,7 +98,7 @@ const translations = {
       seeAll: "See all services & pricing",
       items: [
         { title: "Wig Install", desc: "Wig install without stylist, with straightening or with curls. Natural, neat finish tailored to your style.", price: "from €25" },
-        { title: "Funali Braids", desc: "Funali braids in large, medium or small. Trendy, lightweight and versatile — 4h to 6h session.", price: "from €50" },
+        { title: "Fulani Braids", desc: "Fulani braids in large, medium or small. Trendy, lightweight and versatile — 4h to 6h session.", price: "from €50" },
         { title: "Wig Customisation", desc: "Customisation, touch-up and washing. Revive your wig with a flawless finish.", price: "from €20" },
       ],
     },
@@ -122,7 +120,7 @@ const translations = {
       seeAll: "See my work on Instagram",
       items: [
         { name: "Inès M.", text: "The wig install was impeccable. Natural and neat result, Ketsia is truly talented and attentive.", service: "Wig Install" },
-        { name: "Raïssa K.", text: "My funali braids are stunning. Precise, patient and caring — a truly premium experience.", service: "Funali Braids" },
+        { name: "Raïssa K.", text: "My funali braids are stunning. Precise, patient and caring — a truly premium experience.", service: "Fulani Braids" },
         { name: "Nadège B.", text: "The wig customisation is perfect. I couldn't have hoped for a better result.", service: "Customisation" },
       ],
     },
@@ -134,7 +132,7 @@ const translations = {
       bookNow: "Book now",
     },
     footer: {
-      tagline: "Wig install • Funali braids • Jayda wayda • Customisation in Roubaix. A blend of beauty and elegance.",
+      tagline: "Wig install • Fulani braids • Jayda wayda • Customisation in Roubaix. A blend of beauty and elegance.",
       contact: "Contact",
       follow: "Follow me",
       rights: "All rights reserved.",
@@ -182,9 +180,9 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2">
             <img
-              src={LOGO_URL}
+              src={delieLogoImg}
               alt="Delie Beauty"
-              className={`transition-all duration-500 ${scrolled ? "h-8" : "h-10"} w-auto`}
+              className={`transition-all duration-500 ${scrolled ? "h-10" : "h-14"} w-auto`}
               style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
             />
           </a>
@@ -272,7 +270,7 @@ function Index() {
             <div className="absolute -inset-6 rounded-[2rem] bg-copper opacity-20 blur-3xl animate-shimmer" />
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-elegant border border-cream/10">
               <img
-                src={ABOUT_URL || wigImg}
+                src={aboutDelieImg}
                 alt="Delie Beauty — pose de perruques et coiffure afro"
                 className="h-full w-full object-cover"
               />
@@ -307,7 +305,7 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {([wigImg, braidsImg, locsImg] as const).map((img, i) => {
+            {([posePerruqueImg, fulaniBraidsImg, wigCustomImg] as const).map((img, i) => {
               const item = t.services.items[i];
               return (
                 <article key={item.title} className="group relative rounded-3xl overflow-hidden bg-card border border-border hover:border-accent transition-all duration-500 hover:-translate-y-2 shadow-elegant">
@@ -343,7 +341,7 @@ function Index() {
           <div className="relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant">
               <img
-                src={ABOUT_URL || braidsImg}
+                src={aboutDelieImg}
                 alt="Ketsia Bitoumbou — Delie Beauty"
                 loading="lazy"
                 className="h-full w-full object-cover"
@@ -444,9 +442,9 @@ function Index() {
         <div className="mx-auto max-w-7xl grid md:grid-cols-3 gap-10 items-start">
           <div>
             <img
-              src={LOGO_URL}
+              src={delieLogoImg}
               alt="Delie Beauty"
-              className="h-12 w-auto mb-4"
+              className="h-16 w-auto mb-4"
               style={{ filter: "brightness(0) invert(1)" }}
             />
             <p className="text-sm max-w-xs" style={{ color: "oklch(0.96 0.022 75 / 0.6)" }}>
