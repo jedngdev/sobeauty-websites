@@ -54,7 +54,7 @@ const translations = {
       title1: "Ce que",
       title2: "disent",
       title3: "mes clientes.",
-      seeAll: "Voir mes réalisations sur Instagram",
+      seeAll: "Voir tous mes avis clients",
       items: [
         { name: "Inès M.", text: "La pose de perruque était impeccable. Un résultat naturel et soigné, Ketsia est vraiment douée et à l'écoute.", service: "Pose Perruque" },
         { name: "Raïssa K.", text: "Mes fulani braids sont magnifiques. Précise, patiente et bienveillante — une vraie expérience premium.", service: "Fulani Braids" },
@@ -117,7 +117,7 @@ const translations = {
       title1: "What my",
       title2: "clients",
       title3: "say.",
-      seeAll: "See my work on Instagram",
+      seeAll: "See all my client reviews",
       items: [
         { name: "Inès M.", text: "The wig install was impeccable. Natural and neat result, Ketsia is truly talented and attentive.", service: "Wig Install" },
         { name: "Raïssa K.", text: "My fulani braids are stunning. Precise, patient and caring — a truly premium experience.", service: "Fulani Braids" },
