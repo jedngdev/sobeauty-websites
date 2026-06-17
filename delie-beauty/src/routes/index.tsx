@@ -177,12 +177,12 @@ function Index() {
           scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/60" : "bg-transparent"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-6 h-36 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2">
             <img
               src={delieLogoImg}
               alt="Delie Beauty"
-              className={`transition-all duration-500 ${scrolled ? "h-10" : "h-14"} w-auto`}
+              className={`transition-all duration-500 ${scrolled ? "h-28" : "h-36"} w-auto`}
               style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
             />
           </a>
@@ -225,14 +225,14 @@ function Index() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen bg-hero text-cream pt-20 overflow-hidden">
+      <section id="top" className="relative min-h-screen bg-hero text-cream pt-36 overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full animate-shimmer" style={{ background: "radial-gradient(circle, oklch(0.71 0.12 75 / 0.25), transparent 70%)" }} />
           <div className="absolute bottom-0 right-0 h-[600px] w-[600px] rounded-full animate-shimmer delay-300" style={{ background: "radial-gradient(circle, oklch(0.86 0.08 75 / 0.15), transparent 70%)" }} />
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, oklch(0.96 0.022 75) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-24 grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)]">
+        <div className="relative mx-auto max-w-7xl px-6 pt-16 pb-24 grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-9rem)]">
           <div className="space-y-8">
             <h1 className="animate-float-up delay-100 font-display text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light" style={{ color: "var(--cream)" }}>
               {t.hero.title1} <br />
@@ -444,7 +444,7 @@ function Index() {
             <img
               src={delieLogoImg}
               alt="Delie Beauty"
-              className="h-16 w-auto mb-4"
+              className="h-48 w-auto mb-4"
               style={{ filter: "brightness(0) invert(1)" }}
             />
             <p className="text-sm max-w-xs" style={{ color: "oklch(0.96 0.022 75 / 0.6)" }}>
