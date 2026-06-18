@@ -12,6 +12,37 @@ import appCss from "../styles.css?url";
 
 const LOGO_URL = "https://mjdrordjjxnysfupzgzv.supabase.co/storage/v1/object/public/client-logos/nbqiDYMPqU8LGg5e3CRdPp/1781041519432.png";
 
+// Set from Cloudflare dashboard → Analytics → Web Analytics → Add a site
+const CF_WEB_ANALYTICS_TOKEN = "";
+
+const STRUCTURED_DATA = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Ingrid Beauty Hair",
+  "description": "Spécialiste des locs à Andilly (95580). Reprise racines twist et crochet, tressage, coloration. 15 ans d'expérience.",
+  "url": "https://ingrid-beauty-hair.sobeauty.business",
+  "telephone": "+33660872886",
+  "email": "ingrid.shillingford123@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "16 rue du président Paul Doumer",
+    "addressLocality": "Andilly",
+    "postalCode": "95580",
+    "addressCountry": "FR",
+  },
+  "image": LOGO_URL,
+  "logo": LOGO_URL,
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "knowsLanguage": ["fr", "en", "ht"],
+  "sameAs": [
+    "https://www.instagram.com/Ingridbeautyhair971",
+    "https://www.tiktok.com/@ingridbeautyhair971",
+    "https://www.facebook.com/Ingrid%20Beauty%20Hair%20-%20Andilly%20Sarcelles",
+  ],
+  "founder": { "@type": "Person", "name": "Ingrid Delishys-T" },
+});
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -106,6 +137,17 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="fr">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: STRUCTURED_DATA }}
+        />
+        {CF_WEB_ANALYTICS_TOKEN && (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{"token":"${CF_WEB_ANALYTICS_TOKEN}"}`}
+          />
+        )}
       </head>
       <body>
         {children}
