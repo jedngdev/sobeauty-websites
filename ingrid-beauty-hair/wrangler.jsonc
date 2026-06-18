@@ -7,7 +7,7 @@
   "assets": { "directory": "dist/client" },
   "routes": [
     {
-      "pattern": "ingrid-beauty-hair.sobeauty.business",
+      "pattern": "ingridbeautyhair.sobeauty.business",
       "custom_domain": true
     }
   ]

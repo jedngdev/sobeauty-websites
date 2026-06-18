@@ -20,7 +20,7 @@ const STRUCTURED_DATA = JSON.stringify({
   "@type": "HairSalon",
   "name": "Ingrid Beauty Hair",
   "description": "Spécialiste des locs à Andilly (95580). Reprise racines twist et crochet, tressage, coloration. 15 ans d'expérience.",
-  "url": "https://ingrid-beauty-hair.sobeauty.business",
+  "url": "https://ingridbeautyhair.sobeauty.business",
   "telephone": "+33660872886",
   "email": "ingrid.shillingford123@gmail.com",
   "address": {
