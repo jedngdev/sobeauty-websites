@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Mail, MapPin, Star, ArrowRight, Heart, Instagram, Phone } from "lucide-react";
-import delieLogoImg from "@/assets/delie-logo.png";
+import delieLogoWob from "@/assets/delie-logo-wob.png";
+import delieLogoBow from "@/assets/delie-logo-bow.png";
 import posePerruqueImg from "@/assets/pose-perruque.jpg";
 import fulaniBraidsImg from "@/assets/fulani-braids.jpg";
 import wigCustomImg from "@/assets/wig-custom.jpg";
@@ -180,10 +181,9 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6 h-36 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-2">
             <img
-              src={delieLogoImg}
+              src={scrolled ? delieLogoBow : delieLogoWob}
               alt="Delie Beauty"
               className={`transition-all duration-500 ${scrolled ? "h-28" : "h-36"} w-auto`}
-              style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
             />
           </a>
           <nav className="hidden md:flex items-center gap-10 text-sm font-medium">
@@ -442,10 +442,9 @@ function Index() {
         <div className="mx-auto max-w-7xl grid md:grid-cols-3 gap-10 items-start">
           <div>
             <img
-              src={delieLogoImg}
+              src={delieLogoWob}
               alt="Delie Beauty"
               className="h-48 w-auto mb-4"
-              style={{ filter: "brightness(0) invert(1)" }}
             />
             <p className="text-sm max-w-xs" style={{ color: "oklch(0.96 0.022 75 / 0.6)" }}>
               {t.footer.tagline}
