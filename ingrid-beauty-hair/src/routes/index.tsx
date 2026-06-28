@@ -608,7 +608,7 @@ export function SiteFooter({ t }: { t: { footer: { tagline: string; contact: str
             <a href="https://www.tiktok.com/@ingridbeautyhair971" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 hover:bg-copper hover:border-transparent transition-colors">
               <Music2 className="h-4 w-4" />
             </a>
-            <a href="https://www.facebook.com/Ingrid%20Beauty%20Hair%20-%20Andilly%20Sarcelles" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 hover:bg-copper hover:border-transparent transition-colors">
+            <a href="https://www.facebook.com/profile.php?id=61584014396897" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 hover:bg-copper hover:border-transparent transition-colors">
               <Facebook className="h-4 w-4" />
             </a>
           </div>
