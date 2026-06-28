@@ -366,8 +366,7 @@ function Index() {
                     <h3 className="font-display text-2xl mb-2 leading-tight">{item.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                   </div>
-                  <div className="mt-6 flex items-end justify-between">
-                    <div className="font-display text-2xl text-gradient-copper">{item.price}</div>
+                  <div className="mt-6 flex items-end justify-end">
                     <a
                       href={BOOKING_URL}
                       target="_blank"
