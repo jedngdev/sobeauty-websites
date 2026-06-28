@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Mail, MapPin, Star, ArrowRight, Heart, Instagram, Music2, Phone, Facebook } from "lucide-react";
-import ingridImg from "@/assets/ingrid-portrait.jpg";
+import ingridCutoutImg from "@/assets/ingrid-cutout.png";
 import svcLocsImg from "@/assets/svc-locs.jpg";
 import svcTwistImg from "@/assets/svc-twist.jpg";
 import svcBarberImg from "@/assets/svc-barber.jpg";
@@ -281,8 +281,8 @@ function Index() {
           </div>
 
           {/* Portrait tile */}
-          <div className="col-span-12 sm:col-span-7 lg:col-span-4 lg:row-span-3 relative overflow-hidden rounded-[2rem] min-h-[260px] lg:min-h-0 shadow-elegant">
-            <img src={ingridImg} alt="Ingrid Beauty Hair" className="absolute inset-0 h-full w-full object-cover object-top" />
+          <div className="col-span-12 sm:col-span-7 lg:col-span-4 lg:row-span-3 relative overflow-hidden rounded-[2rem] min-h-[260px] lg:min-h-0 shadow-elegant bg-muted/40">
+            <img src={ingridCutoutImg} alt="Ingrid Beauty Hair" className="absolute left-1/2 -translate-x-1/2 w-auto h-[115%]" style={{ top: '-8%' }} />
             <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.18 0.05 350 / 0.60), transparent 55%)" }} />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-cream">
               <span className="text-xs uppercase tracking-[0.25em]">Locticienne</span>
@@ -389,8 +389,8 @@ function Index() {
         <div className="mx-auto max-w-7xl grid grid-cols-12 auto-rows-[minmax(120px,auto)] gap-3 sm:gap-4">
 
           {/* Portrait tile */}
-          <div className="col-span-12 md:col-span-5 lg:col-span-4 row-span-2 rounded-[2rem] overflow-hidden shadow-elegant bg-card min-h-[420px] relative">
-            <img src={ingridImg} alt="Ingrid Beauty Hair" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
+          <div className="col-span-12 md:col-span-5 lg:col-span-4 row-span-2 rounded-[2rem] overflow-hidden shadow-elegant bg-muted/30 min-h-[420px] relative">
+            <img src={ingridCutoutImg} alt="Ingrid Beauty Hair" loading="lazy" className="absolute bottom-0 left-1/2 -translate-x-1/2 h-full w-auto" />
           </div>
 
           {/* Bio tile */}
