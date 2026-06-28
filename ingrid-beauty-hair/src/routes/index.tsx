@@ -1,11 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Mail, MapPin, Star, ArrowRight, Heart, Instagram, Music2, Phone, Facebook } from "lucide-react";
-import heroImg from "@/assets/service-locs.jpg";
-import aboutImg from "@/assets/service-braids.jpg";
-import svcLocsImg from "@/assets/service-locs.jpg";
-import svcBraidsImg from "@/assets/service-braids.jpg";
-import svcWigImg from "@/assets/service-wig.jpg";
+import ingridImg from "@/assets/ingrid-portrait.jpg";
+import svcLocsImg from "@/assets/svc-locs.jpg";
+import svcTwistImg from "@/assets/svc-twist.jpg";
+import svcBarberImg from "@/assets/svc-barber.jpg";
 import flowerImg from "@/assets/flower.png";
 
 const LOGO_URL = "https://mjdrordjjxnysfupzgzv.supabase.co/storage/v1/object/public/client-logos/nbqiDYMPqU8LGg5e3CRdPp/1781041519432.png";
@@ -32,21 +31,21 @@ const translations = {
     },
     services: {
       tag: "Prestations",
-      title1: "Des locs",
-      title2: "soignées",
-      title3: " qui vous ressemblent.",
+      title1: "Des soins",
+      title2: "sur mesure",
+      title3: " pour vous.",
       seeAll: "Voir tous mes services",
       more: "Et bien plus...",
       items: [
-        { title: "Locs — Reprise twist", desc: "Reprise des racines en twist + coiffure simple. Du plus court au plus long.", price: "à partir de 60€", duration: "sur mesure" },
-        { title: "Locs — Reprise crochet", desc: "Reprise des racines au crochet + coiffure simple. Résultat naturel et précis.", price: "à partir de 75€", duration: "sur mesure" },
-        { title: "Produits capillaires", desc: "Sérum Pousse Pousse, Huile explosive et Shampooing savon noir. Soins de qualité.", price: "à partir de 20€", duration: "—" },
+        { title: "Locs", desc: "Reprise des racines en twist ou crochet + coiffure simple. Du plus court au plus long.", price: "à partir de 60€", duration: "sur mesure" },
+        { title: "Twist", desc: "Twist soigné pour sublimer vos cheveux. Précision et douceur garanties.", price: "sur devis", duration: "sur mesure" },
+        { title: "Barber", desc: "Coupe, dégradé et entretien sur mesure. Un service précis pour un look impeccable.", price: "sur devis", duration: "sur mesure" },
       ],
     },
     about: {
       tag: "À propos",
       title1: "Je m'appelle",
-      title2: "Ingrid Delishys-T",
+      title2: "Ingrid",
       title3: ".",
       desc: "Je suis passionnée et autodidacte. J'aime sublimer et révéler la beauté de chaque cliente. Depuis 15 ans, je mets mon savoir-faire au service de vos locs avec douceur, précision et passion.",
       bullets: [
@@ -60,9 +59,9 @@ const translations = {
     },
     testimonials: {
       tag: "Pourquoi me choisir",
-      title1: "Chaleureux",
-      title2: "et moderne",
-      title3: ".",
+      title1: "Des soins",
+      title2: "chaleureux",
+      title3: " et modernes.",
       items: [
         { label: "Écoute", text: "Je prends le temps d'écouter vos envies et de vous conseiller pour que vous repartiez avec exactement ce que vous souhaitiez." },
         { label: "Douceur", text: "Je travaille avec douceur et respect de votre cheveu. Mes clientes me font confiance depuis des années pour cette attention particulière." },
@@ -76,9 +75,9 @@ const translations = {
       desc: "Réservez votre rendez-vous en ligne en quelques secondes.",
       bookNow: "Réserver maintenant",
     },
-    marquee: ["Locs", "Reprise Racines", "Tressage", "Coloration", "Barber", "Produits Capillaires"],
+    marquee: ["Locs", "Twist", "Barber", "Reprise Racines", "Coloration", "Andilly 95"],
     footer: {
-      tagline: "Spécialiste des locs à Andilly (95). Reprise racines twist & crochet, tressage, coloration.",
+      tagline: "Locs, Twist & Barber à Andilly (95). Reprise racines, coiffure et coupe sur mesure.",
       contact: "Contact",
       follow: "Suivez-moi",
       policy: "Politique d'annulation",
@@ -99,21 +98,21 @@ const translations = {
     },
     services: {
       tag: "Services",
-      title1: "Beautiful locs",
+      title1: "Services",
       title2: "made for you",
       title3: ".",
       seeAll: "See all services",
       more: "And more...",
       items: [
-        { title: "Locs — Twist retouch", desc: "Root retouch with twist method + simple styling. From shortest to longest.", price: "from €60", duration: "custom" },
-        { title: "Locs — Crochet retouch", desc: "Root retouch with crochet method + simple styling. Natural and precise.", price: "from €75", duration: "custom" },
-        { title: "Hair products", desc: "Sérum Pousse Pousse, Explosive Oil and Black Soap Shampoo. Quality care.", price: "from €20", duration: "—" },
+        { title: "Locs", desc: "Root retouch with twist or crochet method + simple styling. From shortest to longest.", price: "from €60", duration: "custom" },
+        { title: "Twist", desc: "Refined twist to enhance your hair. Precision and gentleness guaranteed.", price: "on request", duration: "custom" },
+        { title: "Barber", desc: "Cut, fade and custom maintenance. A precise service for an impeccable look.", price: "on request", duration: "custom" },
       ],
     },
     about: {
       tag: "About",
       title1: "My name is",
-      title2: "Ingrid Delishys-T",
+      title2: "Ingrid",
       title3: ".",
       desc: "I am self-taught and passionate. I love enhancing and revealing the beauty of every client. For 15 years, I have shared my expertise in locs with gentleness, precision and passion.",
       bullets: [
@@ -129,7 +128,7 @@ const translations = {
       tag: "Why choose me",
       title1: "Warm",
       title2: "and modern",
-      title3: ".",
+      title3: " care.",
       items: [
         { label: "Listening", text: "I take the time to listen and advise you so that you leave with exactly what you had in mind." },
         { label: "Gentleness", text: "I work with gentleness and respect for your hair. My clients have trusted me for years for this special care." },
@@ -143,9 +142,9 @@ const translations = {
       desc: "Book your appointment online in seconds.",
       bookNow: "Book now",
     },
-    marquee: ["Locs", "Root Retouch", "Braiding", "Colouring", "Barber", "Hair Products"],
+    marquee: ["Locs", "Twist", "Barber", "Root Retouch", "Colouring", "Andilly 95"],
     footer: {
-      tagline: "Locs specialist in Andilly (95). Twist & crochet root retouch, braiding, colouring.",
+      tagline: "Locs, Twist & Barber specialist in Andilly (95). Root retouch, styling and custom cuts.",
       contact: "Contact",
       follow: "Follow me",
       policy: "Cancellation policy",
@@ -159,7 +158,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Ingrid Beauty Hair - Spécialiste Locs à Andilly (95)" },
-      { name: "description", content: "Ingrid Delishys-T — Spécialiste des locs à Andilly 95580. Reprise racines twist et crochet, tressage, coloration, barber. 15 ans d'expérience. Réservez en ligne." },
+      { name: "description", content: "Ingrid — Spécialiste Locs, Twist & Barber à Andilly 95580. 15 ans d'expérience. Reprise racines, coiffure et coupe sur mesure. Réservez en ligne." },
       { property: "og:title", content: "Ingrid Beauty Hair - Spécialiste Locs à Andilly (95)" },
       { property: "og:description", content: "Spécialiste des locs à Andilly. Reprise racines twist et crochet, tressage, coloration. 15 ans d'expérience." },
       { property: "og:url", content: "/" },
@@ -168,7 +167,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const SERVICE_IMGS = [svcLocsImg, svcWigImg, svcBraidsImg];
+const SERVICE_IMGS = [svcLocsImg, svcTwistImg, svcBarberImg];
 
 function Index() {
   const [scrolled, setScrolled] = useState(false);
@@ -253,15 +252,15 @@ function Index() {
           {/* Tagline tile */}
           <div className="col-span-12 lg:col-span-8 lg:row-span-4 relative overflow-hidden rounded-[2rem] bg-hero text-cream p-8 sm:p-12 flex flex-col justify-between min-h-[460px]">
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full animate-shimmer" style={{ background: "radial-gradient(circle, oklch(0.65 0.18 310 / 0.30), transparent 70%)" }} />
-              <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, oklch(0.99 0.003 310) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+              <div className="absolute -top-32 -left-32 h-[500px] w-[500px] rounded-full animate-shimmer" style={{ background: "radial-gradient(circle, oklch(0.60 0.15 350 / 0.30), transparent 70%)" }} />
+              <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle, oklch(0.99 0.002 355) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
             </div>
             <div className="relative space-y-6">
               <div className="text-xs uppercase tracking-[0.3em] text-copper">Ingrid Beauty Hair · Andilly</div>
               <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] font-light" style={{ color: "var(--cream)" }}>
                 {t.hero.title1} <span className="italic text-gradient-copper">{t.hero.title2}</span> {t.hero.title3}
               </h1>
-              <p className="max-w-lg text-base sm:text-lg leading-relaxed" style={{ color: "oklch(0.99 0.003 310 / 0.75)" }}>
+              <p className="max-w-lg text-base sm:text-lg leading-relaxed" style={{ color: "oklch(0.99 0.002 355 / 0.75)" }}>
                 {t.hero.desc}
               </p>
             </div>
@@ -283,8 +282,8 @@ function Index() {
 
           {/* Portrait tile */}
           <div className="col-span-12 sm:col-span-7 lg:col-span-4 lg:row-span-3 relative overflow-hidden rounded-[2rem] min-h-[260px] lg:min-h-0 shadow-elegant">
-            <img src={heroImg} alt="Locs — Ingrid Beauty Hair" className="absolute inset-0 h-full w-full object-cover" />
-            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.18 0.05 310 / 0.60), transparent 55%)" }} />
+            <img src={ingridImg} alt="Ingrid Beauty Hair" className="absolute inset-0 h-full w-full object-cover object-top" />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.18 0.05 350 / 0.60), transparent 55%)" }} />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-cream">
               <span className="text-xs uppercase tracking-[0.25em]">Locticienne</span>
               <span className="font-display italic text-2xl">Ingrid</span>
@@ -302,7 +301,7 @@ function Index() {
           {/* Location tile */}
           <div className="col-span-5 sm:col-span-7 lg:col-span-2 rounded-[2rem] bg-espresso text-cream p-5 flex flex-col justify-between min-h-[120px]">
             <MapPin className="h-5 w-5 text-copper" />
-            <div className="text-xs uppercase tracking-[0.2em]" style={{ color: "oklch(0.99 0.003 310 / 0.8)" }}>{t.hero.location}</div>
+            <div className="text-xs uppercase tracking-[0.2em]" style={{ color: "oklch(0.99 0.002 355 / 0.8)" }}>{t.hero.location}</div>
           </div>
 
           {/* Marquee tile */}
@@ -337,7 +336,7 @@ function Index() {
               to="/services"
               className="col-span-12 lg:col-span-4 group rounded-[2rem] bg-espresso text-cream p-8 flex flex-col justify-between min-h-[180px] hover:bg-copper transition-colors duration-500"
             >
-              <span className="text-xs uppercase tracking-[0.25em]" style={{ color: "oklch(0.99 0.003 310 / 0.7)" }}>{t.services.more}</span>
+              <span className="text-xs uppercase tracking-[0.25em]" style={{ color: "oklch(0.99 0.002 355 / 0.7)" }}>{t.services.more}</span>
               <span className="flex items-center justify-between font-display text-2xl">
                 {t.services.seeAll}
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -391,7 +390,7 @@ function Index() {
 
           {/* Portrait tile */}
           <div className="col-span-12 md:col-span-5 lg:col-span-4 row-span-2 rounded-[2rem] overflow-hidden shadow-elegant bg-card min-h-[420px] relative">
-            <img src={aboutImg} alt="Ingrid Beauty Hair" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            <img src={ingridImg} alt="Ingrid Beauty Hair" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
           </div>
 
           {/* Bio tile */}
@@ -414,7 +413,7 @@ function Index() {
           {/* Experience badge tile */}
           <div className="col-span-6 md:col-span-4 lg:col-span-3 rounded-[2rem] bg-espresso text-cream p-7 flex flex-col justify-between min-h-[180px]">
             <div className="font-display text-6xl text-gradient-copper">15</div>
-            <div className="text-xs uppercase tracking-[0.2em]" style={{ color: "oklch(0.99 0.003 310 / 0.7)" }}>{t.about.experience}</div>
+            <div className="text-xs uppercase tracking-[0.2em]" style={{ color: "oklch(0.99 0.002 355 / 0.7)" }}>{t.about.experience}</div>
           </div>
 
           {/* Signature + CTA tile */}
@@ -431,10 +430,16 @@ function Index() {
             </a>
           </div>
 
-          {/* Logo banner tile */}
+          {/* Location tile */}
           <div className="col-span-12 md:col-span-5 lg:col-span-5 rounded-[2rem] bg-hero text-cream p-7 flex items-center justify-between min-h-[140px]">
-            <img src={LOGO_URL} alt="Ingrid Beauty Hair" className="h-16 sm:h-20 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
-            <span className="text-xs uppercase tracking-[0.25em]" style={{ color: "oklch(0.99 0.003 310 / 0.7)" }}>Andilly · 95580</span>
+            <div className="flex items-center gap-4">
+              <MapPin className="h-10 w-10 shrink-0" style={{ color: "var(--copper-glow)" }} />
+              <div>
+                <p className="font-display text-2xl" style={{ color: "var(--cream)" }}>Andilly</p>
+                <p className="text-xs uppercase tracking-[0.25em] mt-1" style={{ color: "oklch(0.99 0.002 355 / 0.7)" }}>95580 Val-d'Oise</p>
+              </div>
+            </div>
+            <span className="text-xs uppercase tracking-[0.25em]" style={{ color: "oklch(0.99 0.002 355 / 0.7)" }}>France</span>
           </div>
         </div>
       </section>
@@ -510,14 +515,14 @@ function Index() {
           {/* Large CTA tile */}
           <div className="col-span-12 lg:col-span-8 lg:row-span-2 relative overflow-hidden rounded-[2rem] bg-hero text-cream p-8 sm:p-12 min-h-[360px] flex flex-col justify-between">
             <div className="pointer-events-none absolute inset-0">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full animate-shimmer" style={{ background: "radial-gradient(circle, oklch(0.65 0.18 310 / 0.25), transparent 60%)" }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full animate-shimmer" style={{ background: "radial-gradient(circle, oklch(0.60 0.15 350 / 0.25), transparent 60%)" }} />
             </div>
             <div className="relative space-y-5">
               <img src={flowerImg} alt="" className="h-10 w-10 animate-[spin_10s_linear_infinite]" />
               <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.05]" style={{ color: "var(--cream)" }}>
                 {t.cta.title1} <em className="text-gradient-copper not-italic font-normal">{t.cta.title2}</em> {t.cta.title3}
               </h2>
-              <p className="max-w-lg text-base" style={{ color: "oklch(0.99 0.003 310 / 0.75)" }}>{t.cta.desc}</p>
+              <p className="max-w-lg text-base" style={{ color: "oklch(0.99 0.002 355 / 0.75)" }}>{t.cta.desc}</p>
             </div>
             <a
               href={BOOKING_URL}
@@ -549,8 +554,8 @@ function Index() {
           >
             <Mail className="h-5 w-5" />
             <div>
-              <div className="text-[10px] sm:text-xs uppercase tracking-[0.25em] mb-1" style={{ color: "oklch(0.99 0.003 310 / 0.6)" }}>Email</div>
-              <div className="text-xs sm:text-sm leading-tight break-all" style={{ color: "oklch(0.99 0.003 310 / 0.9)" }}>{EMAIL}</div>
+              <div className="text-[10px] sm:text-xs uppercase tracking-[0.25em] mb-1" style={{ color: "oklch(0.99 0.002 355 / 0.6)" }}>Email</div>
+              <div className="text-xs sm:text-sm leading-tight break-all" style={{ color: "oklch(0.99 0.002 355 / 0.9)" }}>{EMAIL}</div>
             </div>
           </a>
 
@@ -585,7 +590,7 @@ export function SiteFooter({ t }: { t: { footer: { tagline: string; contact: str
       <div className="mx-auto max-w-7xl grid md:grid-cols-3 gap-10 items-start">
         <div>
           <img src={LOGO_URL} alt="Ingrid Beauty Hair" className="h-16 w-auto mb-4 object-contain" />
-          <p className="text-sm max-w-xs" style={{ color: "oklch(0.99 0.003 310 / 0.7)" }}>
+          <p className="text-sm max-w-xs" style={{ color: "oklch(0.99 0.002 355 / 0.7)" }}>
             {t.footer.tagline}
           </p>
         </div>
@@ -608,12 +613,12 @@ export function SiteFooter({ t }: { t: { footer: { tagline: string; contact: str
               <Facebook className="h-4 w-4" />
             </a>
           </div>
-          <div className="pt-4 text-xs" style={{ color: "oklch(0.99 0.003 310 / 0.6)" }}>
+          <div className="pt-4 text-xs" style={{ color: "oklch(0.99 0.002 355 / 0.6)" }}>
             <Link to="/contact" className="hover:text-copper transition-colors">{t.footer.policy}</Link>
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl mt-12 pt-6 border-t border-cream/10 text-xs flex flex-wrap justify-between gap-3" style={{ color: "oklch(0.99 0.003 310 / 0.5)" }}>
+      <div className="mx-auto max-w-7xl mt-12 pt-6 border-t border-cream/10 text-xs flex flex-wrap justify-between gap-3" style={{ color: "oklch(0.99 0.002 355 / 0.5)" }}>
         <span>© {new Date().getFullYear()} Ingrid Beauty Hair. {t.footer.rights}</span>
         <span className="inline-flex items-center gap-1.5">
           Made with <Heart className="h-3 w-3 fill-current text-copper" /> by{" "}
